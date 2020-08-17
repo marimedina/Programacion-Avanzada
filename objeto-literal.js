@@ -15,5 +15,5 @@ console.log(persona);
 console.log(persona.nombre);
 console.log(persona2);
 
-// funcion para sacar la mayoria de eddad
+// funcion para sacar la mayoria de edad
 //cuando se tenga que jubilar

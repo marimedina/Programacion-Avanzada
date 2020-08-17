@@ -1,5 +1,5 @@
 //manera de escribir funciones con un nuevo
-//standar
+//estandar
 
 let viajando = function(destino){
     return `Viajando a la ciudad de: ${destino}`
