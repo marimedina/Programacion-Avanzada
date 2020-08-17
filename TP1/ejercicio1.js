@@ -1,3 +1,5 @@
+//Con index.html fuera de la carpeta TP1
+
 
 //Concatenación entre 2 cad literales para devolver edad 
 

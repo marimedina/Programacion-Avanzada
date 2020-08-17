@@ -1,3 +1,4 @@
+//Con index.html fuera de la carpeta TP1
 
 //Operaciones artimeticas
 const n1 = 25
