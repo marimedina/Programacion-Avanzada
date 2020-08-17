@@ -46,12 +46,3 @@ edificio.piso = '8Piso';
 
 console.log(persona);
 
-//Crear un objeto de tipo pelicula
-//nombre pec, 
-// nombre actr
-//año de publicacion
-//Pais de origen
-
-//hacer notacion por punto y referencia
-
-//INVESTIGAR notacion por corchetes
