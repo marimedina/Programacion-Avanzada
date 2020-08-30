@@ -1,4 +1,4 @@
-//destructuracion de objetos
+//Destructuracion de objetos (extraer objetos)
 
 const aprendiendoJS = {
     version: {
@@ -10,14 +10,15 @@ const aprendiendoJS = {
 
 console.log(aprendiendoJS);
 
-//Destructuracion anterior
+//Destructuracion c/version anterior
+
 /*let version = aprendiendoJS.version;
 console.log(version);*/
 
 
-//destruc forma nueva
+//Destruc forma nueva
+
 let {version, frameworks} = aprendiendoJS;
 console.log(version);
 console.log(frameworks);
-
 

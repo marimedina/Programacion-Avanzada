@@ -1,8 +1,9 @@
-//estructura basica de una promesa
+//se utilizan para hacer llamados asincronos en JS, por ejemplo el consumo de una api
+//(llamos externos que se puede hacer en nuestro programa hacia otras funciones)
 
-//pueden devlver dos valores
-//resolve => ejecuta el llamado a la promesa, siempre y cuando el llamado
-//sea correcto
+//estructura basica de una promesa
+//pueden devolver dos valores:
+//resolve => ejecuta el llamado a la promesa, siempre y cuando el llamado sea correcto
 //reject => cuando hay un error
 
 
@@ -19,12 +20,14 @@ const aplicarDescuento = new Promise((resolve, reject) => {
     }, 3000)
 });
 
+console.log(aplicarDescuento);
+
 aplicarDescuento.then(resultado => {
     console.log(resultado);
 }).catch(error => {
     console.log(error);
 })
-//console.log(aplicarDescuento);
+
 
 //en este ejemplo si es False entonces devuelve el resolve, si en True
 //devuelve reject

@@ -1,4 +1,4 @@
-
+//La inversa a obj restructuring
 
 const banda = 'Metalica';
 const genero = 'Heave metal';

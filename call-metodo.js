@@ -1,5 +1,4 @@
 //establece this usando call
-
 function saludar() {
     console.log(`Hola soy ${this.name} ${this.lastName}`);
 }
@@ -17,10 +16,16 @@ function caminar(metros, dir) {
 
 caminar.call(maria, 400, "oeste");
 
+
+
 //Establecer this usando apply y pasar argumentos
 const valores = [800, 'sur']
 caminar.apply(maria, valores);
+
 //caminar.apply(maria, [500,'Este']);
+
+
+
 
 //Establecer this en una fun usando bind
 
