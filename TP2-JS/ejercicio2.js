@@ -8,24 +8,14 @@ const lastFM = async() => {
     console.log(resp);
     console.log(artistas);
 
-    let lista = `<table>
-                        <tr>
-                            <td>Artista</td>
-                            <td>Reporducciones</td>
-                            <td>Oyentes</td>
-                        </tr>
-                    </table>`
-
-    const listaArt = document.querySelector("table")
-
-    artistas.artist.forEach(pos => {
-        lista += `<table>
-                    <tr>
+    const listaArt = document.querySelector("#table")
+    let lista;
+    artistas.artists.artist.forEach(pos => {
+        lista += `<tr>
                         <td>${pos.name}</td>
                         <td>${pos.playcount}</td>
-                        <td>${pos.listener}</td>
-                    </tr>
-                </table>
+                        <td>${pos.listeners}</td>
+                    </tr>  
         `;
 
         listaArt.innerHTML = lista;
