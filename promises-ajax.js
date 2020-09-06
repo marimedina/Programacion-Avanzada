@@ -13,10 +13,9 @@ const descargarUsuarios = cantidad => new Promise((res, rej) => {
 
     //se debe hacer un on load (devuelve estado de la conexion)
     xhr.onload = () => {
-        i+(xhr.status == 200) {
+        if (xhr.status == 200) {
             res(JSON.parse(xhr.responseText).results)
         }
-
         else {
             //una vez que finalizo, tengo que tener una resp
             rej(Error(xhr.statusText));
@@ -31,17 +30,19 @@ const descargarUsuarios = cantidad => new Promise((res, rej) => {
 console.log(descargarUsuarios(10));
 
 descargarUsuarios(10)
-then (
+.then(
     miembros => imprimirHTML(miembros),
     error => console.log(
         new error('Hubo un error' + error)
     )
 );
 
+//tener en cuenta que el parametro que se da esta en plural
+//y dentro de la funcion se da singular
 function imprimirHTML(usuarios) {
     let html = '';
     usuarios.forEach( usuario => {
-        htmñ += `
+        html += `
         <li>
             nombre: ${usuario.name.first} ${usuario.name.last}
             pais: ${usuario.nat} 
@@ -50,7 +51,9 @@ function imprimirHTML(usuarios) {
         </li>
         `;
     })
+
+    const contenedorApp = document.querySelector('#app');
+    contenedorApp.innerHTML = html;
 };
 
-const contenedorApp = document.querySelector(#app);
-contenedorApp.innerHTML = html;
+

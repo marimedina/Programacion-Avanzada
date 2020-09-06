@@ -1,4 +1,4 @@
-/* const getImagenPromesa = () => {
+/*const getImagenPromesa = () => {
     const promesa =  new Promise((resolve, reject) => {
         resolve('https://fvsdfbvfg.com')
     })
@@ -8,7 +8,7 @@
 getImagenPromesa().then(console.log); */
 
 
-/* const getImagen = async() => {
+/*const getImagen = async() => {
     return 'https://fvsdfbvfg.com';
 }
 
@@ -19,9 +19,9 @@ console.log(getImagen()); */
 
 const getImagen = async() => {
 
-    const apiKey = 'uNmTCRzITa2VAVDXAsHvxAN2Y13mD4xG';
-    const resp = await fetch(`https://api.giphy.com/v1/stickers/random?api_key=uNmTCRzITa2VAVDXAsHvxAN2Y13mD4xG&tag=&rating=g`)
-    const data = await resp.json();
+    const apiKey = '0fAjXcNJ3sRd0mh25mr9pUcury96Ahei';
+    const resp = await fetch(`http://api.giphy.com/v1/stickers/random?api_key=${apiKey}`);
+    const {data} = await resp.json();
 
     console.log(data);
 
