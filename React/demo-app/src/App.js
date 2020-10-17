@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import './App.css';
+import Carrito from './Components/Carrito';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Producto from './Components/Producto';
@@ -37,6 +38,10 @@ function App() {
         />
       ))}
       
+      <Carrito
+        carrito = {carrito}
+        agregarProducto = {agregarProducto}
+      />
       
       <Footer
         fecha = {fecha}
