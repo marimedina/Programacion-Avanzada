@@ -1,14 +1,12 @@
 import React from 'react';
-import Navbar from './Components/UI/Navbar';
+import AppRouter from './Routers/AppRouter';
 
-const Heroes = () => {
-    return ( 
+const HeroesApp = () => {
+    return (
         <div>
-            <>
-                <Navbar/>
-            </>
+            <AppRouter/>
         </div>
     );
 }
-    
-export default Heroes;
+ 
+export default HeroesApp;

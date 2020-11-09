@@ -1,15 +1,15 @@
 import React from 'react';
 import HeroList from '../Heroes/HeroList';
 
-const DcScreen = () => {
+const MarvelScreen = () => {
     return (
         <div>
-            <h1>DC screen</h1>
+            <h1>Marvel</h1>
             <hr />
 
-            <HeroList publisher="DC Comics"/>
+            <HeroList publisher="Marvel Comics"/>
         </div>
     );
 }
- 
-export default DcScreen;
+
+export default MarvelScreen;
