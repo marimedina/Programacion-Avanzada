@@ -1,56 +1,102 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { useLocation} from 'react-router-dom';
+import queryString from 'query-string';
 import {heroes} from '../../Data/Heroes';
 import HeroCard from '../Heroes/HeroCard';
+import { useForm } from '../../Hooks/useForm';
+import { getHeroesByName } from '../../Selectors/getHeroesByName';
 
-const SearchScreen = () => {
+const SearchScreen = ({ history }) => {
 
-    const heroesFiltered =  heroes;
+    const location = useLocation();
+    const { q = '' } = queryString.parse(location.search);
 
-    return ( 
-        <div>
-            <h1>Search Screen</h1>
-            <hr/>
+    const [ formValues, handleInputChange ] = useForm({
+        searchText: q
+    });
 
-           
-            <div className="row">
-                <div className="col-4">
+    const { searchText } = formValues;
+    
+    // console.log( queryString.parse(location.search));
+    const heroesFiltered =  useMemo(() => getHeroesByName(q), [q]);
 
-                </div>
+    const handleSearch = e => {
+        e.preventDefault()
+        history.push(`?q=${searchText}`);
+    }
 
-                <div className="col-8">
 
-                </div>
-            </div>
+    return (
+            <div>
+                <h1> Search Screen</h1>
+                <hr />
 
-            <div className="row">
-                <div className="col-5">
+                <div className="row">
+                     <div  className="col-5">
+                        <h4>Search Form</h4>
+                        <hr />
 
-                    <h4>Search Form</h4>
-                    <hr/>
+                 <form onSubmit={handleSearch}>
+                     <input
+                            type="text"
+                            placeholder="Buscar un Heroe"
+                            className="form-control"
+                            name='searchText'
+                            autoComplete="off"
+                            onChange={handleInputChange}
+                            />  
 
-                    <form>
-                        <input type="submit" placeholder="Buscar un Heroe" className="form-control"/>
-                        <button type="submit" className="btn m-1 btn-block btn-outline-primary">Buscar ...</button>
+                            <button
+                            type="submit"
+                            className="btn m-1 btn-block btn-outline-primary"
+                            >
+                                Burcar...
+                            </button>
+
                     </form>
+                    </div>
 
-                </div>
-                
-                <div className="col-7">
-                    <h4> Resultado</h4>
-                    <hr/>
-                    {
-                        heroesFiltered.map(hero => (
-                            <HeroCard
-                                key={hero.id}
-                                {...hero}
-                            />
-                        ))
-                    }
+                    <div className="col-7">
+
+                        <h4> Resultado</h4>
+                        <hr />
+
+                       {
+                        ( q === '') &&
+                         <div 
+                         className="alert alert-info"
+                         >Buscar Heroes
+                         </div>
+                       }
+
+                       {
+                           (q !== '' && heroesFiltered.length === 0 )
+                           &&
+                           <div className="alert alert-danger">
+                                No existen Heroes para su búsqueda
+                           </div>
+                       }
+                        {   
+                            heroesFiltered.map( hero => (
+                                <HeroCard 
+                                    key={ hero.id }
+                                    {...hero}
+
+                                />
+                            ))
+
+                        }
+                    </div>
 
                 </div>
             </div>
-        </div>
-    );
+
+       
+
+     
+
+
+      );
 }
  
 export default SearchScreen;

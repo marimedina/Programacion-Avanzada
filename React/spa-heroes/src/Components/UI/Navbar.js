@@ -39,7 +39,7 @@ const Navbar = () => {
                         exact
                         to="/Search"
                     >
-
+                        Search
                     </NavLink>
                 </div>
             </div>

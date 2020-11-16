@@ -1,7 +1,6 @@
 import React from 'react';
 import getHeroesByPublisher from '../../Selectors/getHeroesByPublisher';
 import HeroCard from './HeroCard';
-import HeroScreen from './HeroScreen';
 
 const HeroList = ({publisher}) => {
     

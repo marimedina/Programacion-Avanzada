@@ -42,6 +42,7 @@ const HeroScreen = () => {
                     <li className="list-group-item"><b>Publisher:</b>{publisher}</li>
                     <li className="list-group-item"><b>First_appearance:</b>{first_appearance}</li>
                 </ul>
+                <br />
 
                 <h5>Characters</h5>
                 <p>{characters}</p>

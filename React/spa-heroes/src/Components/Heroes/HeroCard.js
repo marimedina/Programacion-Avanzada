@@ -32,7 +32,7 @@ const HeroCard = ({
                     </p>
 
                     <Link to = {`./hero/${id}`}>
-                    Mas..
+                        Mas..
                     </Link>
 
                 </div>

@@ -15,12 +15,14 @@ const DashboardRoutes = () => {
         <>
             <Navbar />
             
-            <div>    
+            <div className="container mt-2">    
                 <Switch>
                     <Route exact path="/Marvel" component= { MarvelScreen }/>
                     <Route exact path="/Hero/:heroId " component= { HeroScreen }/>
                     <Route exact path="/DC" component= { DcScreen }/>
                     <Route exact path="/Search" component= { SearchScreen }/>
+
+                    <Redirect to="/marvel" />
                 </Switch>
             </div>
         </>
